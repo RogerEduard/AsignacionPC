@@ -33,7 +33,8 @@ namespace AppAsignacionPC
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            if (comboBox1.Text != "")
+            {
                 try
                 {
                     ServiceColaborador.Colaborador objcolaborador = new ServiceColaborador.Colaborador();
@@ -54,7 +55,7 @@ namespace AppAsignacionPC
                 {
                     string codigo = error.Detail.Codigo;
                     string descripcion = error.Detail.Descripcion;
-                    if (MessageBox.Show(descripcion,codigo, MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
+                    if (MessageBox.Show(descripcion, codigo, MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
                     {
                         limpiar();
                     }
@@ -63,8 +64,18 @@ namespace AppAsignacionPC
                     //MessageBox.ReferenceEquals(error.Detail.Codigo, "101");
                     //MessageBox.ReferenceEquals(error.Detail.Descripcion, "El colaborador ya existe");
                     //MessageBox.Show("El colaborador ya existe");
-                   
-                }  
+                }
+            }
+            else
+            {
+                if (MessageBox.Show("Debe elegir un cargo al colaborador", "Cargo Colaborador",
+         MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+         == DialogResult.Yes)
+                {
+                    comboBox1.Focus();
+                }
+            }
+                
         }
 
         public void limpiar(){
