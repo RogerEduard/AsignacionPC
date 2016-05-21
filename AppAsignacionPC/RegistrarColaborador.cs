@@ -33,8 +33,7 @@ namespace AppAsignacionPC
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Trim() == " ")
-            {
+            
                 try
                 {
                     ServiceColaborador.Colaborador objcolaborador = new ServiceColaborador.Colaborador();
@@ -51,16 +50,21 @@ namespace AppAsignacionPC
                     ListarColaboradores();
                     limpiar();
                 }
-                catch (FaultException<ServiceColaborador.RepetidoExcepcion>)
+                catch (FaultException<ServiceColaborador.RepetidoExcepcion> error)
                 {
+                    string codigo = error.Detail.Codigo;
+                    string descripcion = error.Detail.Descripcion;
+                    if (MessageBox.Show(descripcion,codigo, MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
+                    {
+                        limpiar();
+                    }
+                    //MessageBox.Show(mensaje);
                     //MessageBox.ReferenceEquals("Error al crear", error.Reason.ToString());
                     //MessageBox.ReferenceEquals(error.Detail.Codigo, "101");
                     //MessageBox.ReferenceEquals(error.Detail.Descripcion, "El colaborador ya existe");
-                    MessageBox.Show("El colaborador ya existe");
-                    limpiar();
+                    //MessageBox.Show("El colaborador ya existe");
+                   
                 }  
-            }
-            
         }
 
         public void limpiar(){

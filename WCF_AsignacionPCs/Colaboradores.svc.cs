@@ -17,6 +17,7 @@ namespace WCF_AsignacionPCs
 
         public Colaborador CrearColaborador(Colaborador colaboradorCrear)
         {
+            
             if (colaboradorDAO.obtener(colaboradorCrear.codigo) != null)
             {
                 throw new FaultException<RepetidoExcepcion>
@@ -29,13 +30,6 @@ namespace WCF_AsignacionPCs
                 new FaultReason("Error al crear"));
             }
             return colaboradorDAO.Crear(colaboradorCrear);
-
-            //if (colaboradorDAO.obtener(colaboradorCrear.codigo) != null)
-            //{
-            //    throw new FaultException<string>("El colaborador ya existe");
-            //}
-            //return colaboradorDAO.Crear(colaboradorCrear);
-
         }
 
         public Colaborador ModificarColaborador(Colaborador colaboradorModificar)
