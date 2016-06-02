@@ -68,6 +68,8 @@
     </Compile>
     <Compile Include="Dominio\Colaborador.cs" />
     <Compile Include="Errores\RepetidoExcepcion.cs" />
+    <Compile Include="Errores\RepetidoExcepcion2.cs" />
+    <Compile Include="Errores\Valida.cs" />
     <Compile Include="IColaboradores.cs" />
     <Compile Include="Persistencia\ColaboradorDAO.cs" />
     <Compile Include="Persistencia\Util.cs" />

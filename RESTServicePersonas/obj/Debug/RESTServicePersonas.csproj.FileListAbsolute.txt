@@ -1,0 +1,5 @@
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\RESTServicePersonas\bin\RESTServicePersonas.dll.config
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\RESTServicePersonas\bin\RESTServicePersonas.dll
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\RESTServicePersonas\bin\RESTServicePersonas.pdb
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\RESTServicePersonas\obj\Debug\RESTServicePersonas.dll
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\RESTServicePersonas\obj\Debug\RESTServicePersonas.pdb

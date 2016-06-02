@@ -10,3 +10,6 @@ C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\AppA
 C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\AppAsignacionPC\obj\Debug\AppAsignacionPC.csproj.GenerateResource.Cache
 C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\AppAsignacionPC\obj\Debug\AppAsignacionPC.exe
 C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\AppAsignacionPC\obj\Debug\AppAsignacionPC.pdb
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\AppAsignacionPC\obj\Debug\AppAsignacionPC.csprojResolveAssemblyReference.cache
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\AppAsignacionPC\bin\Debug\CapaEntidad.dll
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\AppAsignacionPC\bin\Debug\CapaEntidad.pdb

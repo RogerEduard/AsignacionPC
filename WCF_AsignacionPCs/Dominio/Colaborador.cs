@@ -11,6 +11,10 @@ namespace WCF_AsignacionPCs.Dominio
     {
         [DataMember]
         public int codigo { get; set; }
+
+        [DataMember]
+        public string dni { get; set; }
+
         [DataMember]
         public string nombre { get; set; }
 

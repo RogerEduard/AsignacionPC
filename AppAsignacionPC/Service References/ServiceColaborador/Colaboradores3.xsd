@@ -7,4 +7,11 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RepetidoExcepcion" nillable="true" type="tns:RepetidoExcepcion" />
+  <xs:complexType name="RepetidoExcepcion2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RepetidoExcepcion2" nillable="true" type="tns:RepetidoExcepcion2" />
 </xs:schema>

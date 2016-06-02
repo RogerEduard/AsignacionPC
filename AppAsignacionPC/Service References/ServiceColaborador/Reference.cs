@@ -29,6 +29,9 @@ namespace AppAsignacionPC.ServiceColaborador {
         private int codigoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string dniField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime fechanacimientoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -69,6 +72,19 @@ namespace AppAsignacionPC.ServiceColaborador {
                 if ((this.codigoField.Equals(value) != true)) {
                     this.codigoField = value;
                     this.RaisePropertyChanged("codigo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string dni {
+            get {
+                return this.dniField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.dniField, value) != true)) {
+                    this.dniField = value;
+                    this.RaisePropertyChanged("dni");
                 }
             }
         }
@@ -183,12 +199,74 @@ namespace AppAsignacionPC.ServiceColaborador {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RepetidoExcepcion2", Namespace="http://schemas.datacontract.org/2004/07/WCF_AsignacionPCs.Errores")]
+    [System.SerializableAttribute()]
+    public partial class RepetidoExcepcion2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Codigo2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Descripcion2Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Codigo2 {
+            get {
+                return this.Codigo2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Codigo2Field, value) != true)) {
+                    this.Codigo2Field = value;
+                    this.RaisePropertyChanged("Codigo2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descripcion2 {
+            get {
+                return this.Descripcion2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Descripcion2Field, value) != true)) {
+                    this.Descripcion2Field = value;
+                    this.RaisePropertyChanged("Descripcion2");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceColaborador.IColaboradores")]
     public interface IColaboradores {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IColaboradores/CrearColaborador", ReplyAction="http://tempuri.org/IColaboradores/CrearColaboradorResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(AppAsignacionPC.ServiceColaborador.RepetidoExcepcion), Action="http://tempuri.org/IColaboradores/CrearColaboradorRepetidoExcepcionFault", Name="RepetidoExcepcion", Namespace="http://schemas.datacontract.org/2004/07/WCF_AsignacionPCs.Errores")]
+        [System.ServiceModel.FaultContractAttribute(typeof(AppAsignacionPC.ServiceColaborador.RepetidoExcepcion2), Action="http://tempuri.org/IColaboradores/CrearColaboradorRepetidoExcepcion2Fault", Name="RepetidoExcepcion2", Namespace="http://schemas.datacontract.org/2004/07/WCF_AsignacionPCs.Errores")]
         AppAsignacionPC.ServiceColaborador.Colaborador CrearColaborador(AppAsignacionPC.ServiceColaborador.Colaborador colaboradorCrear);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IColaboradores/CrearColaborador", ReplyAction="http://tempuri.org/IColaboradores/CrearColaboradorResponse")]

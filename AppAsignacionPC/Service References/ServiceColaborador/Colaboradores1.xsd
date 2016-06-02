@@ -4,6 +4,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="cargo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="fechanacimiento" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ingreso" type="xs:dateTime" />
       <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />

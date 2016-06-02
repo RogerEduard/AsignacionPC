@@ -3,4 +3,3 @@ C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\Prue
 C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\PruebaDeCreación\bin\Debug\PruebaDeCreación.pdb
 C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\PruebaDeCreación\obj\Debug\PruebaDeCreación.dll
 C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\PruebaDeCreación\obj\Debug\PruebaDeCreación.pdb
-C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\PruebaDeCreación\obj\Debug\PruebasUnitarias.csprojResolveAssemblyReference.cache

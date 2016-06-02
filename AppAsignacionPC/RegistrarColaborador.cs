@@ -10,6 +10,10 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaEntidad;
+using System.Runtime.Serialization.Json;
+using System.Runtime.Serialization;
+using System.Web.Script.Serialization;
 
 namespace AppAsignacionPC
 {
@@ -40,6 +44,7 @@ namespace AppAsignacionPC
                     ServiceColaborador.Colaborador objcolaborador = new ServiceColaborador.Colaborador();
 
                     objcolaborador.codigo = int.Parse(textBox1.Text);
+                    objcolaborador.dni = textBox2.Text;
                     objcolaborador.nombre = textBox4.Text;
                     objcolaborador.ingreso = Convert.ToDateTime(maskedTextBox1.Text);
                     objcolaborador.fechanacimiento = Convert.ToDateTime(maskedTextBox2.Text);
@@ -65,6 +70,23 @@ namespace AppAsignacionPC
                     //MessageBox.ReferenceEquals(error.Detail.Descripcion, "El colaborador ya existe");
                     //MessageBox.Show("El colaborador ya existe");
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                //catch (FaultException<ServiceColaborador.RepetidoExcepcion2> error2)
+                //{
+                //    string codigo2 = error2.Detail.Codigo;
+                //    string descripcion2 = error2.Detail.Descripcion;
+                //    if (MessageBox.Show(descripcion2, codigo2, MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
+                //    {
+                //        limpiar();
+                //    }
+                //}
+                //catch(FaultException<ServiceColaborador.Valida> er)
+                //{
+
+                //}
             }
             else
             {
@@ -97,6 +119,7 @@ namespace AppAsignacionPC
             ServiceColaborador.Colaborador objcolaborador = new ServiceColaborador.Colaborador();
 
             objcolaborador.codigo = int.Parse(textBox1.Text);
+            objcolaborador.dni = textBox2.Text;
             objcolaborador.nombre = textBox4.Text;
             objcolaborador.ingreso = Convert.ToDateTime(maskedTextBox1.Text);
             objcolaborador.fechanacimiento = Convert.ToDateTime(maskedTextBox2.Text);
@@ -129,6 +152,89 @@ namespace AppAsignacionPC
             //if (textBox1.Text.Trim() == ""){
                 
             //}
+        }
+
+        //[TestMethod]
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                //groupBox2.Enabled = true;
+                WebClient proxy = new WebClient();
+                string serviceURL = string.Format("http://localhost:19434/Personas.svc/Personas/" + textBox2.Text);
+                byte[] data = proxy.DownloadData(serviceURL);
+                Stream stream = new MemoryStream(data);
+                DataContractJsonSerializer obj = new DataContractJsonSerializer(typeof(Persona));
+                Persona persona = obj.ReadObject(stream) as Persona;
+                textBox4.Text = persona.nombre + " " + persona.apellidopaterno + " " + persona.apellidomaterno;
+                maskedTextBox2.Text = persona.nacimiento.ToString();
+            }
+            catch (WebException ex)
+            {
+
+                //if (textBox2.Text == "")
+                //{
+                    
+                //    MessageBox.Show("Ingrese un DNI");
+                //}
+                //else
+                //{
+                    HttpStatusCode code = ((HttpWebResponse)ex.Response).StatusCode;
+                    if (Convert.ToInt32(code) == 500)
+                    {
+                        string mensaje = ((HttpWebResponse)ex.Response).StatusDescription;
+                        StreamReader reader = new StreamReader(ex.Response.GetResponseStream());
+                        string error = reader.ReadToEnd();
+                        JavaScriptSerializer js1 = new JavaScriptSerializer();
+                        string mensa = js1.Deserialize<string>(error);
+                        if (MessageBox.Show(mensa, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
+                        {
+                            limpiar();
+                        }
+                    }
+                    else if (Convert.ToInt32(code) == 417)
+                    {
+                        string mensaje = ((HttpWebResponse)ex.Response).StatusDescription;
+                        StreamReader reader = new StreamReader(ex.Response.GetResponseStream());
+                        string error = reader.ReadToEnd();
+                        JavaScriptSerializer js1 = new JavaScriptSerializer();
+                        string mensa = js1.Deserialize<string>(error);
+                        if (MessageBox.Show(mensa, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
+                        {
+                            limpiar();
+                        }
+                    }
+                    
+                //}
+            }
+
+            
+            
+            
+     
+
+
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox2.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            textBox1.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            textBox4.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            maskedTextBox1.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            maskedTextBox2.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            comboBox1.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+        }
+
+        private void colaboradorBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void colaboradorBindingSource2_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

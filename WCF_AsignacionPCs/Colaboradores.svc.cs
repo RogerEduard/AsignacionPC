@@ -17,7 +17,7 @@ namespace WCF_AsignacionPCs
 
         public Colaborador CrearColaborador(Colaborador colaboradorCrear)
         {
-            
+
             if (colaboradorDAO.obtener(colaboradorCrear.codigo) != null)
             {
                 throw new FaultException<RepetidoExcepcion>
@@ -29,7 +29,34 @@ namespace WCF_AsignacionPCs
                 },
                 new FaultReason("Error al crear"));
             }
+            //if (colaboradorDAO.obtener(Convert.ToInt32(colaboradorCrear.dni)) != null)
+            //{
+            //    throw new FaultException<RepetidoExcepcion2>
+            //    (
+            //    new RepetidoExcepcion2()
+            //    {
+            //        Codigo = "102",
+            //        Descripcion = "El DNI ya existe"
+            //    },
+            //    new FaultReason("Error al crear"));
+            //}
+
+            //Colaborador unidad_valida = new Colaborador();
+            //unidad_valida = colaboradorDAO.obtener(Convert.ToInt32(colaboradorCrear.dni));
+            //if (unidad_valida != null)
+            //{
+            //    throw new FaultException<RepetidoExcepcion2>
+            //    (
+            //    new RepetidoExcepcion2()
+            //    {
+            //        Codigo2 = "102",
+            //        Descripcion2 = "El DNI ya existe"
+            //    },
+            //    new FaultReason("Error al crear"));
+            //}
+
             return colaboradorDAO.Crear(colaboradorCrear);
+            
         }
 
         public Colaborador ModificarColaborador(Colaborador colaboradorModificar)

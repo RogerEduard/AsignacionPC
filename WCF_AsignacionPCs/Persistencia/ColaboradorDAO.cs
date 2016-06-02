@@ -13,7 +13,7 @@ namespace WCF_AsignacionPCs.Persistencia
         public Colaborador Crear(Colaborador colaboradorCrear)
         {
             Colaborador colaboradorCreado = null;
-            string sql = "INSERT INTO T_COLABORADOR (COD_COLABORADOR, NOM_COLABORADOR, FEC_NACIMIENTO, FEC_INGRESO, CAR_COLABORADOR) VALUES (@cod_col, @nom_col, @fec_nac, @fec_col, @car_col)";
+            string sql = "INSERT INTO T_COLABORADOR (COD_COLABORADOR, DNI_COLABORADOR, NOM_COLABORADOR, FEC_NACIMIENTO, FEC_INGRESO, CAR_COLABORADOR) VALUES (@cod_col, @dni_col,@nom_col, @fec_nac, @fec_col, @car_col)";
             using (SqlConnection conexion = new SqlConnection(new Util().CadenaConexión))
             {
                 conexion.Open();
@@ -21,6 +21,7 @@ namespace WCF_AsignacionPCs.Persistencia
                 using (SqlCommand comando = new SqlCommand(sql, conexion))
                 {
                     comando.Parameters.Add(new SqlParameter("@cod_col", colaboradorCrear.codigo));
+                    comando.Parameters.Add(new SqlParameter("@dni_col", colaboradorCrear.dni));
                     comando.Parameters.Add(new SqlParameter("@nom_col", colaboradorCrear.nombre));
                     comando.Parameters.Add(new SqlParameter("@fec_nac", colaboradorCrear.fechanacimiento));
                     comando.Parameters.Add(new SqlParameter("@fec_col", colaboradorCrear.ingreso));
@@ -36,7 +37,7 @@ namespace WCF_AsignacionPCs.Persistencia
         {
 
             Colaborador colaboradormodificado = null;
-            string sql = "UPDATE T_COLABORADOR Set  NOM_COLABORADOR=@nom_col, FEC_NACIMIENTO=@fec_nac, FEC_INGRESO=@fec_col, CAR_COLABORADOR=@car_col where COD_COLABORADOR=@cod_col";
+            string sql = "UPDATE T_COLABORADOR Set  DNI_COLABORADOR=@dni_col,NOM_COLABORADOR=@nom_col, FEC_NACIMIENTO=@fec_nac, FEC_INGRESO=@fec_col, CAR_COLABORADOR=@car_col where COD_COLABORADOR=@cod_col";
             using (SqlConnection conexion = new SqlConnection(new Util().CadenaConexión))
             {
                 conexion.Open();
@@ -44,6 +45,7 @@ namespace WCF_AsignacionPCs.Persistencia
                 using (SqlCommand comando = new SqlCommand(sql, conexion))
                 {
                     comando.Parameters.Add(new SqlParameter("@cod_col", colaboradorModificar.codigo));
+                    comando.Parameters.Add(new SqlParameter("@dni_col", colaboradorModificar.dni));
                     comando.Parameters.Add(new SqlParameter("@nom_col", colaboradorModificar.nombre));
                     comando.Parameters.Add(new SqlParameter("@fec_nac", colaboradorModificar.fechanacimiento));
                     comando.Parameters.Add(new SqlParameter("@fec_col", colaboradorModificar.ingreso));
@@ -92,6 +94,7 @@ namespace WCF_AsignacionPCs.Persistencia
                             colaboradorEncontrado = new Colaborador()
                             {
                                 codigo = (int)resultado["COD_COLABORADOR"],
+                                dni = (string)resultado["DNI_COLABORADOR"],
                                 nombre = (string)resultado["NOM_COLABORADOR"],
                                 fechanacimiento = (DateTime)resultado["FEC_NACIMIENTO"],
                                 ingreso = (DateTime)resultado["FEC_INGRESO"],
@@ -111,7 +114,7 @@ namespace WCF_AsignacionPCs.Persistencia
             List<Colaborador> colaboradoresEncontradas = new List<Colaborador>();
 
             Colaborador colaboradorEncontrado = null;
-            string sql = "Select COD_COLABORADOR, NOM_COLABORADOR, FEC_NACIMIENTO, FEC_INGRESO, CAR_COLABORADOR from T_COLABORADOR WHERE ESTADO='Activo'";
+            string sql = "Select COD_COLABORADOR, DNI_COLABORADOR, NOM_COLABORADOR, FEC_NACIMIENTO, FEC_INGRESO, CAR_COLABORADOR from T_COLABORADOR WHERE ESTADO='Activo'";
 
             using (SqlConnection conexion = new SqlConnection(new Util().CadenaConexión))
             {
@@ -127,6 +130,7 @@ namespace WCF_AsignacionPCs.Persistencia
                             colaboradorEncontrado = new Colaborador()
                             {
                                 codigo = (int)resultado["COD_COLABORADOR"],
+                                dni = (string)resultado["DNI_COLABORADOR"],
                                 nombre = (string)resultado["NOM_COLABORADOR"],
                                 fechanacimiento = (DateTime)resultado["FEC_NACIMIENTO"],
                                 ingreso = (DateTime)resultado["FEC_INGRESO"],

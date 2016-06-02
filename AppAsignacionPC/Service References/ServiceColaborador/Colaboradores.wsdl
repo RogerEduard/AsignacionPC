@@ -17,6 +17,9 @@
   <wsdl:message name="IColaboradores_CrearColaborador_RepetidoExcepcionFault_FaultMessage">
     <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/WCF_AsignacionPCs.Errores" name="detail" element="q1:RepetidoExcepcion" />
   </wsdl:message>
+  <wsdl:message name="IColaboradores_CrearColaborador_RepetidoExcepcion2Fault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/WCF_AsignacionPCs.Errores" name="detail" element="q2:RepetidoExcepcion2" />
+  </wsdl:message>
   <wsdl:message name="IColaboradores_ObtenerColaborador_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerColaborador" />
   </wsdl:message>
@@ -46,6 +49,7 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IColaboradores/CrearColaborador" message="tns:IColaboradores_CrearColaborador_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IColaboradores/CrearColaboradorResponse" message="tns:IColaboradores_CrearColaborador_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IColaboradores/CrearColaboradorRepetidoExcepcionFault" name="RepetidoExcepcionFault" message="tns:IColaboradores_CrearColaborador_RepetidoExcepcionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IColaboradores/CrearColaboradorRepetidoExcepcion2Fault" name="RepetidoExcepcion2Fault" message="tns:IColaboradores_CrearColaborador_RepetidoExcepcion2Fault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerColaborador">
       <wsdl:input wsaw:Action="http://tempuri.org/IColaboradores/ObtenerColaborador" message="tns:IColaboradores_ObtenerColaborador_InputMessage" />
@@ -76,6 +80,9 @@
       </wsdl:output>
       <wsdl:fault name="RepetidoExcepcionFault">
         <soap:fault use="literal" name="RepetidoExcepcionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RepetidoExcepcion2Fault">
+        <soap:fault use="literal" name="RepetidoExcepcion2Fault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ObtenerColaborador">

@@ -13,6 +13,7 @@ namespace WCF_AsignacionPCs
     public interface IColaboradores
     {
         [FaultContract(typeof(RepetidoExcepcion))]
+        [FaultContract(typeof(RepetidoExcepcion2))]
         [OperationContract]
         Colaborador CrearColaborador(Colaborador colaboradorCrear);
 

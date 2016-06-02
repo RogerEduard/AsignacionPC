@@ -1,0 +1,4 @@
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\PruebasUnitariasREST\bin\Debug\PruebasUnitariasREST.dll
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\PruebasUnitariasREST\bin\Debug\PruebasUnitariasREST.pdb
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\PruebasUnitariasREST\obj\Debug\PruebasUnitariasREST.dll
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\PruebasUnitariasREST\obj\Debug\PruebasUnitariasREST.pdb

@@ -1,0 +1,6 @@
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\CapaEntidad\bin\Debug\CapaEntidad.dll.config
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\Roger Paucar\Documents\Visual Studio 2013\Projects\AsignacionDePCs\CapaEntidad\obj\Debug\CapaEntidad.csprojResolveAssemblyReference.cache
